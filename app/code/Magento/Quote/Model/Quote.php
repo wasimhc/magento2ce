@@ -1926,7 +1926,7 @@ class Quote extends AbstractExtensibleModel implements \Magento\Quote\Api\Data\C
                 ->setQuoteFilter($this->getId())
                 ->getFirstItem();
         }
-        if ($payment = $this->_currentPayment) {
+        if ($payment == $this->_currentPayment) {
             if ($this->getId()) {
                 $payment->setQuote($this);
             }
